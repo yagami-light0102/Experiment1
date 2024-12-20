@@ -1,15 +1,19 @@
 #pragma once
-#include "Pose.h"
+#include "PoseHandler.h"
+#include "ICommand.h"
+#include <unordered_map>
+#include <string>
 
-class Executor {
-public:
-    Executor(const Pose& initialPose);
-    void Execute(const std::string& command);
-    Pose Query() const;
+namespace adas {
+    class Executor {
+    public:
+        Executor(const Pose& initialPose);
+        void Execute(const std::string& command);
+        Pose Query() const;
 
-private:
-    Pose pose;
-    void Move();
-    void TurnLeft();
-    void TurnRight();
-};
+    private:
+        PoseHandler poseHandler;
+        std::unordered_map<char, std::unique_ptr<ICommand>> commandMap;
+        void InitializeCommands();
+    };
+}
