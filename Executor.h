@@ -1,4 +1,3 @@
-// Executor.h
 #pragma once
 #include "Pose.h"
 
