@@ -1,4 +1,4 @@
-/ main.cpp
+// main.cpp
 // 引入Executor.h头文件，这样我们可以使用Executor类和Pose结构体。
 #include "Executor.h"
 // 引入iostream库，用于输入输出操作。
